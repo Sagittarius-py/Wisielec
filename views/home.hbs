@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Game - Hangman</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+
+    <main>
+      
+      <h1>Game - Hangman</h1>
+
+      <form action="/category" method="POST" id="form2">
+      <input list="kategoria" id="kategoria1" name="kategoria">
+      <datalist id="kategoria">
+        <option value="Trudne słowa">
+        <option value="Przysłowia">
+        <option value="Tytuły filmów">
+      </datalist>
+      
+      <button type="submit">Wybierz kategorie</button>
+      </form>
+      
+      <h3>Word: {{maskedWord}}</h3>
+      <h4>Wrong guesses:  {{wrongGuesses}}</h4>
+      <form action="/play" method="POST" id="form">
+        <label for="letter-input">Guess a letter:</label>
+        <input type="text" name="letter" id="letter-input" maxlength="1" required />
+        <button type="submit">Guess</button>
+      </form>
+    </main>
+
+    
+    <script src="/js/script.js"></script>
+  </body>
+</html>
