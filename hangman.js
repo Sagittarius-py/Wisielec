@@ -1,20 +1,10 @@
 const words = require("./words.json");
 
 // Funkcja zwracająca losowe słowo z tablicy słów
-function randomWord(category = "trudneSlowa") {
+function randomWord(category = 0) {
   const index = Math.floor(Math.random() * 3);
-  category = category.kategoria;
-  if ((category = "Przysłowia")) {
-    category = "przyslowia";
-  }
-  if ((category = "Trudne słowa")) {
-    category = "trudneSlowa";
-  }
-  if ((category = "Tytuły filmów")) {
-    category = "tytulyFilmow";
-  }
-
-  console.log(words.words[category][index]);
+  console.log(category);
+  console.log(words.words[category]);
   return words.words[category][index].toLowerCase();
 }
 

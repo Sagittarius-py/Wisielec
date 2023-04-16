@@ -61,7 +61,18 @@ app.get("/", (req, res) => {
 });
 
 app.post("/category", (req, res) => {
-  req.session.word = randomWord(req.body);
+  let kategoria = req.body.kategoria;
+  console.log(kategoria);
+  let category;
+  if (kategoria == "Trudne słowa") {
+    category = 0;
+  } else if (kategoria == "Przysłowia") {
+    category = 1;
+  } else if (kategoria == "Tytuły filmów") {
+    category = 2;
+  }
+  req.session.word = randomWord(category);
+
   res.redirect("/");
 });
 
